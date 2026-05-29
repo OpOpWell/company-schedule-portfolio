@@ -26,7 +26,4 @@ Googleスプレッドシート・Google Apps Script・AppSheetを利用した
 社内の予定共有や情報共有を一元管理し、
 電話対応漏れや確認漏れを防止するために作成しました。
 
-## 画面イメージ
-
-※ screenshotsフォルダ参照
 
