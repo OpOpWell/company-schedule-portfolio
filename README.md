@@ -4,7 +4,9 @@
 
 Google Workspace を活用し、社内の予定・進捗・電話対応・車両管理を一元管理するための社内共有システムを構築しました。
 
-Google Sheets をデータベースとして利用し、Google Apps Script（GAS）による自動集計・自動更新、AppSheet によるスマートフォン対応を実装しています。
+Google Sheets をデータベースとして利用し、Google Apps Script（GAS）による自動集計・自動更新機能を実装しています。
+
+複数の管理シートを一覧スケジュールへ自動集約し、要確認事項の抽出やダッシュボードによる状況把握を可能にしました。
 
 ---
 
@@ -23,7 +25,7 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 * 電話折返し忘れ
 * 情報共有漏れ
 * 車検期限の見落とし
-* 予定の把握不足
+* 予定把握の遅れ
 
 が発生していました。
 
@@ -50,6 +52,7 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 
 * 一覧スケジュール自動集約
 * 個人確認機能
+* 既読管理
 * 要確認一覧生成
 
 ### ダッシュボード
@@ -61,10 +64,44 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 * 本日対応
 * 3日以内予定
 * 7日以内予定
-* 車検期限
 * 未読件数
 * 未対応電話
 * 折返し電話
+* 完了件数
+
+---
+
+## システム構成
+
+Google Sheets
+
+↓
+
+出先予定
+
+会議予定
+
+行事予定
+
+工事予定
+
+作業状況
+
+車検管理
+
+電話履歴
+
+↓
+
+一覧スケジュール（自動生成）
+
+↓
+
+要確認一覧（自動生成）
+
+↓
+
+ダッシュボード（自動集計）
 
 ---
 
@@ -75,7 +112,7 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 * 一覧スケジュール自動生成
 * 要確認一覧自動生成
 * ダッシュボード自動集計
-* 個人確認列自動追加
+* 個人確認列自動生成
 * 期限警告判定
 * 条件付き書式による色分け
 * 既読管理
@@ -83,12 +120,13 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 * 日付列自動判定
 * カレンダー入力対応
 
-### AppSheet
+### 入力支援
 
-* スマホ入力対応
-* 写真添付対応
-* 外出先から入力可能
-* 状況確認可能
+* プルダウン入力
+* カレンダー入力
+* チェックボックス入力
+* 状態管理
+* 電話対応管理
 
 ---
 
@@ -108,6 +146,7 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 
 * 完了
 * 進行中
+* 施工中
 * 延期
 * 未対応
 
@@ -127,22 +166,23 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 
 * Google Sheets
 * Google Apps Script (GAS)
-* AppSheet
 * JavaScript
 * Git
 * GitHub
+* Google Workspace
 
 ---
 
 ## 更新履歴
 
-### v3.9
+### v4.0 beta
 
 * 日付列自動認識
 * カレンダー入力対応
-* 個人既読展開機能
+* 個人確認機能改善
 * 一覧スケジュール改善
 * 要確認一覧改善
+* ダッシュボード改善
 
 ---
 
@@ -188,7 +228,7 @@ Google Sheets をデータベースとして利用し、Google Apps Script（GAS
 
 ![要確認一覧](screenshots/要確認一覧.png)
 
-### 既読展開
+### 個人確認機能
 
 ![既読展開](screenshots/既読展開.png)
 
@@ -223,7 +263,7 @@ Google Workspace 環境を利用し、
 
 * Google Sheets
 * Google Apps Script
-* AppSheet
+* Git / GitHub
 
 を独学で学習しました。
 
@@ -235,6 +275,12 @@ Google Workspace 環境を利用し、
 * 業務改善
 
 を目的としたシステム設計・実装を行いました。
+
+
+
+
+
+
 
 
 
