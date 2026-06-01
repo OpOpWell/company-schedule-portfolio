@@ -428,6 +428,7 @@ function onEdit(e) {
 
   const sheet = e.range.getSheet();
   const row = e.range.getRow();
+  const col = e.range.getColumn();
 
   if (row === 1) return;
 
@@ -436,8 +437,43 @@ function onEdit(e) {
     return;
   }
 
+  updateNoticeForEditedRow(sheet, row, col);
   updateCheckboxesForEditedRow(sheet, row);
 }
+
+function updateNoticeForEditedRow(sheet, row, col) {
+  const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+
+  const noticeCol = headers.indexOf("通知") + 1;
+  if (noticeCol <= 0) return;
+
+  const editedHeader = headers[col - 1];
+
+  let dateCol = 0;
+
+  if (DATE_HEADERS.includes(editedHeader)) {
+    dateCol = col;
+  } else {
+    dateCol = findMainDateColumn(headers);
+  }
+
+  if (dateCol <= 0) return;
+
+  const dateValue = sheet.getRange(row, dateCol).getValue();
+  sheet.getRange(row, noticeCol).setValue(getNoticeText(dateValue));
+}
+
+function findMainDateColumn(headers) {
+  const priority = ["日付", "日時", "開始日", "車検日", "保険期限", "終了日"];
+
+  for (const name of priority) {
+    const col = headers.indexOf(name) + 1;
+    if (col > 0) return col;
+  }
+
+  return 0;
+}
+
 
 function updateCheckboxesForEditedRow(sheet, row) {
   const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
@@ -687,19 +723,6 @@ function createCheckGroup() {
     ).shiftColumnGroupDepth(1);
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
