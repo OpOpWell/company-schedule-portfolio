@@ -6,7 +6,7 @@ Google Workspace（Google Sheets / Google Apps Script / Google Calendar）を活
 
 複数の管理シートから一覧スケジュールを自動生成し、担当者ごとの既読管理、未読集計、要確認事項の抽出、Googleカレンダー連携を実現しています。
 
-スマートフォンからも利用できるよう AppSheet と連携し、現場・外出先からの入力にも対応しています。
+さらに AppSheet と連携することで、スマートフォンやタブレットからも利用できるようにし、現場・外出先からの入力にも対応しています。
 
 ---
 
@@ -52,12 +52,12 @@ Google Workspace（Google Sheets / Google Apps Script / Google Calendar）を活
 * 車検管理
 * 社用車予約管理
 * 個人ToDo管理
+* お知らせ管理
 
 ### 情報共有
 
 * 一覧スケジュール自動生成
 * 要確認一覧自動生成
-* お知らせ掲示板
 * 個人既読管理
 * 担当別未読集計
 * 既読率集計
@@ -81,7 +81,6 @@ Google Workspace（Google Sheets / Google Apps Script / Google Calendar）を活
 * 自動バックアップ
 * 定期更新トリガー
 * 過去データ自動アーカイブ
-* 月単位グループ化
 * 過去一覧自動整理
 * 全シート月別折りたたみ
 
@@ -95,22 +94,21 @@ Google Workspace（Google Sheets / Google Apps Script / Google Calendar）を活
 
 ## システム構成
 
+```text
 Google Sheets
 
 ↓
 
-各管理シート
-
-* 出先予定
-* 工事予定
-* 会議予定
-* 行事予定
-* 作業状況
-* 車検管理
-* 電話履歴
-* 社用車予約
-* 個人ToDo
-* お知らせ
+出先予定
+工事予定
+会議予定
+行事予定
+作業状況
+車検管理
+電話履歴
+社用車予約
+個人ToDo
+お知らせ
 
 ↓
 
@@ -139,6 +137,7 @@ Googleカレンダー
 ↓
 
 AppSheet
+```
 
 ---
 
@@ -182,7 +181,7 @@ AppSheet
 
 ### 社用車予約管理
 
-同一車両の予約重複を自動判定し、競合を防止しています。
+同一車両の予約重複を自動判定し、予約競合を防止しています。
 
 ### 過去データ整理
 
@@ -213,6 +212,54 @@ AppSheet連携により、スマートフォンやタブレットからの入力
 
 ---
 
+## スクリーンショット
+
+### ダッシュボード
+
+![ダッシュボード](screenshots/ダッシュボード.png)
+
+### 一覧スケジュール
+
+![一覧スケジュール](screenshots/一覧スケジュール.png)
+
+### 要確認一覧
+
+![要確認一覧](screenshots/要確認一覧.png)
+
+### 出先予定
+
+![出先予定](screenshots/出先予定.png)
+
+### 工事予定
+
+![工事予定](screenshots/工事予定.png)
+
+### 電話履歴
+
+![電話履歴](screenshots/電話履歴.png)
+
+### 社用車予約
+
+![社用車予約](screenshots/社用車予約.png)
+
+### 個人既読管理
+
+![個人既読管理](screenshots/個人既読管理.png)
+
+### 月別管理
+
+![月別管理](screenshots/月別管理.png)
+
+### AppSheet
+
+![AppSheet](screenshots/appsheet.png)
+
+![AppSheet入力画面](screenshots/appsheet入力画面.png)
+
+![AppSheet詳細画面](screenshots/appsheet詳細画面.png)
+
+---
+
 ## 今後の改善予定
 
 * Slack連携
@@ -221,6 +268,8 @@ AppSheet連携により、スマートフォンやタブレットからの入力
 * 承認ワークフロー
 * 権限管理強化
 * KPIダッシュボード拡張
+* 日報管理機能
+* 報告書管理機能
 
 ---
 
@@ -232,20 +281,11 @@ AppSheet連携により、スマートフォンやタブレットからの入力
 
 ---
 
-## スクリーンショット
-
-* ダッシュボード
-* 一覧スケジュール
-* 要確認一覧
-* 工事予定
-* 社用車予約
-* AppSheet画面
-
----
-
 ## ライセンス
 
 Portfolio Project
+
+
 
 
 
