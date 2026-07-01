@@ -1,0 +1,4 @@
+# 自分のPCでだけ使ってください。APIトークン入りファイルをGitHubに上げないでください。
+KINTONE_BASE_URL=https://あなたのサブドメイン.cybozu.com
+KINTONE_APP_ID=アプリID
+KINTONE_API_TOKEN=APIトークン

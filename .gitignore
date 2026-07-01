@@ -1,1 +1,8 @@
 しゃよう/
+
+# kintone demo local files
+kinton/backup/
+kinton/.env
+kinton/*.env
+kinton/api_token.txt
+kinton/kintone_token.txt
